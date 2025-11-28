@@ -1,0 +1,84 @@
+:root {
+    --bg: #0f1724;
+    --panel: #0b1220;
+    --muted: #94a3b8;
+    --accent: #16a34a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #071024 0%, #071824 100%);
+    color: #e6eef8;
+}
+
+.app {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+}
+
+.sidebar .avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.small {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.tab {
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.tab.active {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .app {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+}

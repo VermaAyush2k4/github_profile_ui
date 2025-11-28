@@ -1,0 +1,48 @@
+# Node / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+build/
+dist/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+logs/
+_pids/
+*.pid
+*.seed
+*.pid.lock
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Docker
+docker-compose.override.yml
+**/.dockerignore
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Misc
+.cache
+*.tgz
+*.local
+
+# Ignore built nginx default file if accidentally generated
+/etc/nginx/conf.d/default.conf

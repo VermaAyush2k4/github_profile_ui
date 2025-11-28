@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Optionally pass build args if you want to bake values into the build
+        REACT_APP_GITHUB_USERNAME: ${REACT_APP_GITHUB_USERNAME:-shreeramk}
+        # Token support removed from client image. Do not pass client-side tokens here.
+    ports:
+      # Map host 3000 -> container 80 (nginx default inside container)
+      - "3000:80"
+    environment:
+      # If you want to pass runtime env to the container, set these in a .env file or the shell
+      - REACT_APP_GITHUB_USERNAME=${REACT_APP_GITHUB_USERNAME}
+    restart: unless-stopped
+    # Allows the container to be reachable on your LAN at the host IP (0.0.0.0 inside container)
+    networks:
+      - webnet
+
+  # tiny placeholder API so nginx upstream "api:4000" resolves in development
+  api:
+    image: hashicorp/http-echo:0.2.3
+    command: ["-text=Placeholder API - returns 200 for any request", "-listen=:4000"]
+    expose:
+      - "4000"
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge

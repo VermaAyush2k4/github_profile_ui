@@ -1,0 +1,86 @@
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.left-panel {
+    padding: 18px;
+}
+
+.right-panel {
+    padding: 18px;
+}
+
+.right-panel h2 {
+    margin-bottom: 4px;
+}
+
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.repositories-list {
+    display: grid;
+    gap: 10px;
+}
+
+.repo-item {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo-name {
+    font-weight: 600;
+}
+
+.small-muted {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem
+}
+
+.heatmap-card {
+    padding: 16px;
+}
+
+@media (max-width: 900px) {
+    .app {
+        gap: 12px
+    }
+    .left-panel {
+        order: 2
+    }
+    .right-panel {
+        order: 1
+    }
+}
+
+
+/* Small tweak for very small screens */
+
+@media (max-width: 420px) {
+    .avatar {
+        width: 80px;
+        height: 80px
+    }
+}
