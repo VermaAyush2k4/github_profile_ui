@@ -22,8 +22,10 @@ services:
   api:
     image: hashicorp/http-echo:0.2.3
     command: ["-text=Placeholder API - returns 200 for any request", "-listen=:4000"]
-    expose:
-      - "4000"
+    # No host port mapping — the API listens on 4000 inside the container
+    # and is reached by nginx via the compose network (service name `api:4000`).
+    # "expose" is not required for cross-service networking on a user-defined
+    # bridge network, so it's removed to avoid any host-level port hints.
     restart: unless-stopped
     networks:
       - webnet

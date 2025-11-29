@@ -57,3 +57,4 @@ On Your Network: http://<your-host-ip>:3000  (e.g. http://192.168.1.85:3000)
 Notes:
 - The Docker setup performs a production build and serves it with nginx on port 3000, which is exposed and forwarded to your host so you can open the app from your machine or other devices on the same network.
 -- This project uses mocked contributions for the heatmap and does not rely on a client-side GitHub token.
+-- The backend placeholder API listens on container port 4000 and is reached internally by nginx via the compose network (service name `api:4000`). This API is not published on a host port — it is intentionally internal only.
